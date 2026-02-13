@@ -5,7 +5,8 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  server_url = 'http://localhost:3000';
+  // server_url = 'http://localhost:3000';
+  server_url = 'https://ums-7b7t.onrender.com';
   http = inject(HttpClient);
 
   loginAPI(user: any) {

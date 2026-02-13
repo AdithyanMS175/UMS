@@ -1,0 +1,19 @@
+<div style="height:100vh; width:100%" class="container d-flex justify-content-center align-items-center">
+    <div style="height:50vh;width:50vh; background-color: bisque;" class="d-flex flex-column p-5">
+        <h3>Login</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="d-flex flex-column" action="">
+            <input type="text" class="my-3" formControlName="email" placeholder="Email">
+            @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched){
+            <div class="">*Invalid Email</div>
+            }
+            <input type="text" class="my-3" formControlName="password" placeholder="Password">
+            @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched){
+            <div class="">*Invalid Password</div>
+            }
+
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+
+</div>

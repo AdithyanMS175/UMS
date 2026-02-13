@@ -1,0 +1,83 @@
+<div class="backbacground container py-4">
+
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-semibold mb-0">Users</h4>
+    <a routerLink="/adduser" class="btn btn-outline-primary btn-sm">
+      + Add User
+    </a>
+  </div>
+
+
+  <div class="row g-3">
+
+    @for(item of allUsers(); track $index; let i = $index){
+    <div class="col-md-6 col-lg-4">
+      <div class="card user-card border-0 shadow-sm">
+        <div class="card-body">
+
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="mb-1 fw-semibold">{{item.name}}</h6>
+              <small class="text-muted">{{item.email}}</small>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                ⋮
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a routerLink="/edituser/{{item._id}}" class="dropdown-item">Edit</a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-2" />
+
+          <div class="d-flex justify-content-between small text-muted">
+            <span>{{item.phone}}</span>
+            <span>{{item.age}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    }
+    <!--      
+      <div class="col-md-6 col-lg-4">
+        <div class="card user-card border-0 shadow-sm">
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h6 class="mb-1 fw-semibold">Jane Smith</h6>
+                <small class="text-muted">jane@gmail.com</small>
+              </div>
+
+              <div class="dropdown">
+                <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
+                  ⋮
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                  <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="my-2" />
+
+            <div class="d-flex justify-content-between small text-muted">
+              <span>📞 9123456780</span>
+              <span>🎂 22 yrs</span>
+            </div>
+
+          </div>
+        </div>
+      </div> -->
+
+  </div>
+</div>

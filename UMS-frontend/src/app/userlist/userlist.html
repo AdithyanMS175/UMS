@@ -29,6 +29,7 @@
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a routerLink="/edituser/{{item._id}}" class="dropdown-item">Edit</a>
+                  <button (click)="deleteUser(item._id)" class="dropdown-item">delete</button>
                 </li>
                 
               </ul>

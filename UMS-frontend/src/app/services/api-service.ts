@@ -27,4 +27,9 @@ export class ApiService {
   updateUserAPI(id: any, userData: any) {
     return this.http.put(`${this.server_url}/userupdate/${id}`, userData);
   }
+
+  deleteUserAPI(id: any) {
+    return this.http.delete(`${this.server_url}/userdelete/${id}`);
+  }
+
 }

@@ -24,5 +24,13 @@ export class Userlist {
     })
   }
 
+  deleteUser(id:string){
+    this.api.deleteUserAPI(id).subscribe((res:any)=>{
+      console.log(res);
+    this.getUsers();
+
+    })
+  }
+
    
 }

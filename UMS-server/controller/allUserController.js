@@ -54,3 +54,18 @@ exports.updateUserController = async (req,res) => {
         
     }
 }
+
+exports.deleteUserController = async (req,res) => {
+    console.log("inside deleteUserController")
+    const {id} = req.params;
+    try{
+        const deleteUser = await allUsers.findByIdAndDelete(id);
+        res.status(200).json(deleteUser);
+        console.log(deleteUser);
+
+    }catch(err){
+        console.log(err);
+        res.status(400).json(err);
+        
+    }
+}
